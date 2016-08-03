@@ -8,7 +8,6 @@ resource "aws_subnet" "main" {
     depends_on = ["aws_internet_gateway.main"]
     tags {Name = "${var.service_name}-subnet"}
 }
-
 resource "aws_subnet" "db1" {
     vpc_id = "${aws_vpc.main.id}"
     availability_zone = "${data.aws_availability_zones.available.names[1]}"
@@ -17,7 +16,6 @@ resource "aws_subnet" "db1" {
     depends_on = ["aws_internet_gateway.main"]
     tags {Name = "${var.service_name}-subnet"}
 }
-
 resource "aws_subnet" "db2" {
     vpc_id = "${aws_vpc.main.id}"
     availability_zone = "${data.aws_availability_zones.available.names[2]}"
@@ -26,7 +24,6 @@ resource "aws_subnet" "db2" {
     depends_on = ["aws_internet_gateway.main"]
     tags {Name = "${var.service_name}-subnet"}
 }
-
 resource "aws_route_table" "main" {
     vpc_id = "${aws_vpc.main.id}"
     route {
@@ -35,7 +32,6 @@ resource "aws_route_table" "main" {
     }
     tags {Name = "${var.service_name}-route_table"}
 }
-
 resource "aws_route_table_association" "main" {
     subnet_id = "${aws_subnet.main.id}"
     route_table_id = "${aws_route_table.main.id}"
