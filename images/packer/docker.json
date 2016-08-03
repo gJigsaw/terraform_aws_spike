@@ -6,7 +6,7 @@
             "source_ami": "ami-a6b8e7ce",
             "instance_type": "t2.micro",
             "ssh_username": "ubuntu",
-            "ami_name": "docker-host-20160415-2200"
+            "ami_name": "docker-host-20160803-1000"
         }
     ],
     "provisioners": [
