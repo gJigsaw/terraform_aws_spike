@@ -110,10 +110,5 @@ Local Development
 =================
 If you wish, you can test the two docker images locally.
 ```shell
-docker run --detach --name app gjigsaw/cn-app:20160417-1900
-```
-```shell
-docker run --detach --link app --name web --publish 80:80 \
- --volume <absolute_path_to>/images/docker/web/default_nginx.conf:/etc/nginx/conf.d/default.conf \
-gjigsaw/cn-web:20160417-1900
+docker run --detach --name app gjigsaw/flask:20160803-0800
 ```

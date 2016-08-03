@@ -14,7 +14,7 @@ runcmd:
   - sudo echo "      access_log    off;"                            >> /nginx.conf.tmp
   - sudo echo "    }"                                               >> /nginx.conf.tmp
   - sudo echo "    location / {"                                    >> /nginx.conf.tmp
-  - sudo echo "      proxy_pass http://${host}:80/companyNews/;"    >> /nginx.conf.tmp
+  - sudo echo "      proxy_pass http://${host}:80/;"                >> /nginx.conf.tmp
   - sudo echo "    }"                                               >> /nginx.conf.tmp
   - sudo echo "}"                                                   >> /nginx.conf.tmp
   - sudo docker pull ${image}

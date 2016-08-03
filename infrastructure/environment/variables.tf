@@ -13,11 +13,6 @@ variable "ami" {
     description = "Amazon AMI to use as docker host"
 }
 
-variable "web_image" {
-    type = "string"
-    description = "Docker image of web service"
-}
-
 variable "app_image" {
     type = "string"
     description = "Docker image of app service"
