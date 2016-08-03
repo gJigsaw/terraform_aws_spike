@@ -1,0 +1,19 @@
+{
+    "builders":[
+        {
+            "type": "amazon-ebs",
+            "region": "us-east-1",
+            "source_ami": "ami-a6b8e7ce",
+            "instance_type": "t2.micro",
+            "ssh_username": "ubuntu",
+            "ami_name": "docker-host-20160415-2200"
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "script": "update_and_upgrade.sh",
+            "execute_command": "curl -sSL https://get.docker.com/ | sudo sh"
+        }
+    ]
+}
