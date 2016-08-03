@@ -13,7 +13,7 @@ variable "ami" {
     description = "Amazon AMI to use as docker host"
 }
 
-variable "app_image" {
+variable "app_run_command" {
     type = "string"
-    description = "Docker image of app service"
+    description = "Cloud config Command to run"
 }

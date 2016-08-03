@@ -15,8 +15,8 @@ variable "ami" {
     description = "Amazon AMI to use as docker host"
 }
 
-variable "app_image" {
+variable "app_run_command" {
     type = "string"
-    description = "Docker image of app service"
-    default = "gjigsaw/flask:20160803-0800"
+    description = "Cloud config Command to run"
+    default = "sudo docker run --detach --name app --publish 80:5000 gjigsaw/flask:20160803-0800\n"
 }

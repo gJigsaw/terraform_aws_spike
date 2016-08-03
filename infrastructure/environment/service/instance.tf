@@ -1,3 +1,14 @@
+resource "template_file" "user_data" {
+    template = <<END_OF_USER_DATA
+#cloud-config
+runcmd:
+  - echo Cloud Config Start
+  - ${run_command}
+  - echo Cloud Config End
+END_OF_USER_DATA
+vars { run_command = "${var.run_command}" }
+}
+
 resource "aws_instance" "main" {
     count = "${var.instance_count}"
     subnet_id = "${aws_subnet.main.id}"
@@ -19,6 +30,6 @@ resource "aws_instance" "main" {
         ]
     }
 */
-    user_data = "${var.user_data}"
+    user_data = "${template_file.user_data.rendered}"
     tags = {Name = "${var.service_name}-${count.index}"}
 }

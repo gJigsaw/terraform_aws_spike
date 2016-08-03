@@ -47,7 +47,7 @@ variable "elb_health_check_target" {
     default = "HTTP:80/"
 }
 
-variable "user_data" {
+variable "run_command" {
     type = "string"
-    description = "AMI user_data for cloud_config"
+    description = "cloud config command to run"
 }
