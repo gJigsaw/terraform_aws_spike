@@ -35,12 +35,6 @@ variable "vpc_network_suffix" {
     default = "0.0/16"
 }
 
-variable "subnet_suffix" {
-    type = "string"
-    description = "Last two octets of subnet"
-    default = "0.0/24"
-}
-
 variable "elb_health_check_target" {
     type = "string"
     description = "URL that ELB should use for health checks"

@@ -1,20 +1,18 @@
-variable "application_name" {
-    type = "string"
-    description = "Application name"
-    default = "HelloWorld"
-}
-
-variable "region" {
-    type = "string"
-    description = "Amazon AWS region"
-    default = "us-east-1"
-}
-
 variable "ami" {
     type = "string"
     description = "Amazon AMI to use as docker host"
 }
 
+variable "application_name" {
+    type = "string"
+    description = "Application name"
+    default = "HelloWorld"
+}
+variable "region" {
+    type = "string"
+    description = "Amazon AWS region"
+    default = "us-east-1"
+}
 variable "app_run_command" {
     type = "string"
     description = "Cloud config Command to run"
