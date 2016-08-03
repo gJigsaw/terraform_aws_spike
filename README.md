@@ -9,7 +9,7 @@ export BASE_DIR=<directory_of_this_README>
 ```
 `source $BASE_DIR/images/docker/now/now.sh`
 ```shell
-cd $BASE_DIR/images/amazon/
+cd $BASE_DIR/images/packer/
 now packer build docker.json
 ```
 ```shell
@@ -57,15 +57,14 @@ Conveniences
 
 Images
 ======
-#### Docker
-- No action required; pre-built and accessible anonymously via `hub.docker.com`
-- Dockerfiles and contexts in `./images/docker/*`
-- Available for build with `docker build -t <image_name> <context_path>`
+#### Flask and Proxy Docker Images
+- Pre-Built and accessible anonymously via `hub.docker.com`
+- Dockerfiles and contexts accessible anonymously on github - gjigsaw/docker
 
-#### Amazon
+#### EC2 Amazon AMI
 - Build required.
 ```shell
-cd ./images/amazon/
+cd ./images/packer/
 ```
 ```shell
 now packer build docker.json
